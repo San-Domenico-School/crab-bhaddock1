@@ -21,22 +21,13 @@ public class CrabWorld extends World
         // add them to the world
         addObject(crab, 100, 100);
         
-        addPlayer();
+       
         
         
-        addFood();
+       
         
         
         
         
     }
-    private void addPlayer()
-    {
-        
-    }
-    private void addFood()
-    {
-        
-    }
-
 }
