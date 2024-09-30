@@ -19,14 +19,19 @@ public class CrabWorld extends World
         // instantiate new objects
         Crab crab = new Crab ( );
         // add them to the world
-        addObject(crab, 100, 100);
+        addObject(crab,(int)(getWidth() * Math.random()), (int) (getHeight() * Math.random()));
         
-       
+        Lobster lobster = new Lobster ( );
+        int x = (int) (getWidth() * Math.random());
+        int y = (int) (getHeight() * Math.random());
+        addObject(lobster, x, y);
         
-        
-       
-        
-        
+        x = 0;
+        while (x<=10)
+        {
+            addObject(new Worm(),(int)(getWidth() * Math.random()),(int)(getHeight() * Math.random()));
+            x++;
+        }
         
         
     }

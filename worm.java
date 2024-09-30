@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class worm extends Actor
+public class Worm extends Actor
 {
     /**
      * Act - do whatever the worm wants to do. This method is called whenever

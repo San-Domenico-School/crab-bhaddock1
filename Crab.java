@@ -14,29 +14,32 @@ public class Crab extends Actor
     {
         movement();
         edgeMovement();
+        collision();
     }
+    
    private void movement()
    {
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("down"))
         {
-            move(-3);
+            move(-1);
         }
     
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("up"))
         {
-            move(3);
+            move(1);
         } 
         
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("right"))
         {
             turn(1);
         }
         
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("left"))
         {
             turn(-1);
         }
    }
+   
    private void edgeMovement()
    {
         if(getX() >= 545 && Greenfoot.isKeyDown("right"))
@@ -48,12 +51,16 @@ public class Crab extends Actor
         {
             setLocation(560, getY());
         }
-        
-       
-        
    }
-       
- 
+   
+   private void collision()
+   {
+       if(isTouching(Lobster.class))
+       {
+           Greenfoot.stop();
+       }
+   }
+
 }
 
 
