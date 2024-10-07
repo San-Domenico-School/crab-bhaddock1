@@ -1,44 +1,55 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lobster here.
+ * Defines the Lobster. Lobsters are enemies
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author BHaddock 
+ * @version 1.0 10/6/2024
  */
 public class Lobster extends Actor
 {
-    /**
-     * Act - do whatever the Lobster wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+    //initializes i to 0
     int i = 0;
+    /**
+     * Act - sets move, adds to i and calls rotate and turn methods. 
+     * called when the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
-        Greenfoot.setSpeed(60);
+        //calls rotate and turn methods
         rotateRandomly();
-        move(1);
-        
         turnAtEdge();
-        i++;
-        // Add your action code here.
+        
+        move(1);//sets movespeed to 1
+        
+        i++;//adds to i
     }
     
+    /**
+     * RotateRandomly - method used to rotate lobster
+     * called in the act method
+     */
     private void rotateRandomly()
     {
+        //turns lobster in random direction at set time interval
         if(i == 144)
         {
             turn((int)(100 * Math.random()));
-            i = 0;
+            
+            i = 0;//resets i to 0
         }
     }
     
+    /**
+     * TurnAtEdge - turns lobster when at edge
+     * called in the act method
+     */
     private void turnAtEdge()
     {
+        //turns lobster 180 degrees when at edge
         if(isAtEdge())
         {
-            turn(90);
+            turn(180);//turns lobster 180 degrees
         }
     }
 }
